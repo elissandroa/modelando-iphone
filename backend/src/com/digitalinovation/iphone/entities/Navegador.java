@@ -8,15 +8,13 @@ public class Navegador implements Aplicativos {
 
 	private String nome;
 	private String versao;
-	private String endereco;
 	
 	public Navegador() {
 	}
 
-	public Navegador(String nome, String versao, String endereco) {
+	public Navegador(String nome, String versao) {
 		this.nome = "Safari";
 		this.versao = "1.0";
-		this.endereco = endereco;
 	}
 
 	public String getNome() {
@@ -35,16 +33,10 @@ public class Navegador implements Aplicativos {
 		this.versao = versao;
 	}
 
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-	
 	public void irParaPagina(String endereco) {
 		System.out.println("Navengando para a página: "+endereco);
+		System.out.println("Carregando página ...");
+		System.out.println("Página carregada");
 	}
 
 	@Override
@@ -67,14 +59,15 @@ public class Navegador implements Aplicativos {
 
 	@Override
 	public void abrir() {
+		System.out.println("Navegador");
 		conectar();
 		System.out.println("Abrindo navegador: "+this.nome);
 	}
 
 	@Override
 	public void fechar() {
+		fecharConexao();
 		System.out.println("Fechando navegador: "+this.nome);
-		
 	}
 
 	@Override

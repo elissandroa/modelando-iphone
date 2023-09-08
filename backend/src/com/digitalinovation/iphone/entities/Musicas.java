@@ -57,7 +57,7 @@ public class Musicas implements Player, Aplicativos{
 	
 	@Override
 	public void tocar() {
-		System.out.println("Tocando a música");
+		System.out.println("Tocando a música: "+ this.getNome());
 		
 	}
 
@@ -94,9 +94,9 @@ public class Musicas implements Player, Aplicativos{
 
 	@Override
 	public void abrir() {
+		System.out.println("Abrir player de Musica");
 		conectar();
 		System.out.println("Abrindo player de músicas");
-		fecharConexao();
 	}
 
 	@Override

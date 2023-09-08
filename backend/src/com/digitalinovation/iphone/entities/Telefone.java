@@ -50,6 +50,12 @@ public class Telefone implements RedeMovel{
 	
 	public void fazerLigacao() {
 		System.out.println("Ligando para o número:" + this.numero);
+		System.out.println("ligação em andamento ...");
+	}
+	
+	public void fecharLigacao() {
+		System.out.println("Encerrando ligação com o número: "+ this.numero);
+		System.out.println("Ligação encerrada");
 	}
 	
 	public void chamadaPrivada() {

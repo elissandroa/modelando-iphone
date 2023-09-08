@@ -50,14 +50,13 @@ public class Videos implements Player {
 
 	@Override
 	public void tocar() {
-		System.out.println("Reproduzindo vídeo");
+		System.out.println("Reproduzindo vídeo: "+ this.getNome());
 		
 	}
 
 	@Override
 	public void pausar() {
-		System.out.println("Pausando vídeo");
-		
+		System.out.println("Pausando vídeo: "+ this.getNome());
 	}
 
 	@Override
@@ -69,8 +68,9 @@ public class Videos implements Player {
 
 	@Override
 	public void abrir() {
-		conectar();
 		System.out.println("Abrindo player de Vídeos");
+		conectar();
+
 		
 	}
 

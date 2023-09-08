@@ -69,9 +69,9 @@ public class GoogleMaps implements Aplicativos {
 
 	@Override
 	public void abrir() {
-		conectar();
 		System.out.println("Abrindo o Google Maps");
-		
+		conectar();
+		System.out.println("Indo para o endereço: "+this.endereco);
 	}
 
 	@Override

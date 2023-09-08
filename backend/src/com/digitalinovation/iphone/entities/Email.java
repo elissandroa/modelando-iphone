@@ -56,7 +56,7 @@ public class Email implements Aplicativos {
 	
 	public void enviarEmail() {
 		conectar();
-		System.out.println("Enviando email para o contato:"+ this.contato );
+		System.out.println("Enviando email para o contato:"+ this.contato.getNome() );
 		fecharConexao();
 	}
 
@@ -115,7 +115,7 @@ public class Email implements Aplicativos {
 	
 	@Override
 	public String toString() {
-		return "Email [contato=" + contato + ", assunto=" + assunto + ", mensagem=" + mensagem + "]";
+		return "Email [contato=" + this.contato.getNome() + ", assunto=" + assunto + ", mensagem=" + mensagem + "]";
 	}
 
 }

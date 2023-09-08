@@ -3,7 +3,10 @@ package com.digitalinovation.iphone.entities;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Telefone {
+import com.digitalinovation.iphone.service.ConectRedeMovel;
+import com.digitalinovation.iphone.service.RedeMovel;
+
+public class Telefone implements RedeMovel{
 
 	private Integer numero;
 	private Contato contato;
@@ -60,6 +63,22 @@ public class Telefone {
 	@Override
 	public String toString() {
 		return "Telefone [numero=" + numero + "]";
+	}
+
+	@Override
+	public void conectar() {
+		System.out.println("Conectando a Rede");
+		if(ConectRedeMovel.getInstance() != null) {
+			System.out.println("Conectado via RedeMovel");
+		} else {
+			System.out.print("Falha de conexão !");
+		}
+	}
+
+	@Override
+	public void fecharConexao() {
+		System.out.println("Desconectando da Rede");
+		System.out.println("Conexão Fechada !");
 	}
 
 

@@ -1,6 +1,6 @@
 package com.digitalinovation.iphone.service;
 
-public interface Player {
+public interface Player extends Aplicativos{
 
 	public void tocar();
 	

@@ -1,6 +1,10 @@
 package com.digitalinovation.iphone.entities;
 
-public class Navegador {
+import com.digitalinovation.iphone.service.Aplicativos;
+import com.digitalinovation.iphone.service.ConectRedeMovel;
+import com.digitalinovation.iphone.service.ConectWifi;
+
+public class Navegador implements Aplicativos {
 
 	private String nome;
 	private String versao;
@@ -41,6 +45,48 @@ public class Navegador {
 	
 	public void irParaPagina(String endereco) {
 		System.out.println("Navengando para a página: "+endereco);
+	}
+
+	@Override
+	public void conectar() {
+		System.out.println("Conectando a Rede");
+		if(ConectWifi.getInstance() != null) {
+			System.out.println("Conectado via Wifi");
+		} else if (ConectRedeMovel.getInstance() != null) {
+			System.out.println("Conectado via rede Movel");
+		} else {
+			System.out.print("Falha de conexão !");
+		}
+	}
+
+	@Override
+	public void fecharConexao() {
+		System.out.println("Desconectando da Rede");
+		System.out.println("Conexão Fechada !");
+	}
+
+	@Override
+	public void abrir() {
+		conectar();
+		System.out.println("Abrindo navegador: "+this.nome);
+	}
+
+	@Override
+	public void fechar() {
+		System.out.println("Fechando navegador: "+this.nome);
+		
+	}
+
+	@Override
+	public void maximizar() {
+		System.out.println("Maximizando navegador: "+ this.nome);
+		
+	}
+
+	@Override
+	public void minimizar() {
+		System.out.println("Minimizando navegador: "+this.nome);
+		
 	}
 
 }

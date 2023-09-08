@@ -1,6 +1,6 @@
 package com.digitalinovation.iphone.service;
 
-public interface Aplicativos {
+public interface Aplicativos extends RedeMovel, Wifi {
 	
 	public void abrir();
 	
